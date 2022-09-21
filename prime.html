@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Checking Prime Number or not</title>
+</head>
+<body bgcolor="#afeeee">
+    <br><br><br><br><br>
+    <p style="color:#c71585"><marquee behavior="alternate"><i><b><u><h1>Checking whether Number given is Prime,Odd or Even...</h1></u></b></i></marquee></p>
+    <div class="form">
+        <i><h1><label for="Number" >Enter any Number</label></h1></i>
+        <h3><input type="text" id="A" name="Number"></input><br></h3>
+        <h4><button type=click onclick="Check()"><b>Check</b></button><br></h4>
+    </div>
+    <div id="x"></div>
+    <div id="y"></div>
+    <script>
+        var img = document.createElement("img");
+        img.src = "bunny.gif";
+        var div = document.getElementById("x");
+        div.setAttribute("style","text-align:center");
+        function Check(){
+            var a=document.getElementById("A").value;
+            var count=0;
+            if(a<2){
+                alert("Not a Prime Number");
+                div.appendChild(img);
+            }   
+            else{
+                for(let i=2;i<a/2;i++){
+                    if(a%i===0){
+                        count=1;
+                        break;
+                    }
+                    else{
+                        count=0;
+                    } 
+                }
+                if(count===0)
+                    alert("It is a Prime Number");
+                    div.appendChild(img);
+            } 
+            if(a%2===0){
+                alert("It is a Even Number");
+                div.appendChild(img);
+            }
+            else
+                alert("It is a Odd Number");    
+                div.appendChild(img);
+        }
+    </script>
+</body>
+</html> 
+<style type="text/css">
+    .form{
+        margin:0 auto;
+        width:300px;
+    }
+    .form label{
+        color: black;
+        display: inline-block;
+        text-align: center;
+       
+    }
+    .form input{
+        color: black;
+        height: 30px;
+        background: #00ffff;
+        text-align: center;
+        display: inline-block;
+    }
+    .form button{
+        background:#00ced1;
+        width: 90px;
+        height: 25px;
+        color: black;
+        text-align: center;
+        display: inline-block;
+    }
+</style>
